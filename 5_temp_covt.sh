@@ -1,5 +1,7 @@
 echo "Farenheit : "
 read f
-c=12.5
+div=$(echo "5/9" | bc -l)
 
-bc $c*$f
+c=$(echo "($f-32)*$div" | bc -l)
+
+echo $c
