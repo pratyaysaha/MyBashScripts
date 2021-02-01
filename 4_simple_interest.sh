@@ -5,7 +5,7 @@ read r
 echo "Enter the time : "
 read t
 per=100
-rate=`echo $(( r/per )) | sed 's/..$/.&/'`
-interest=`echo $(( p*rate*t)) | sed 's/..$/.&/'`
-echo "the simple interest is $rate $interest"
+rate=$(echo "$r/100" | bc -l)
+interest=$(echo "$p * $rate * $t" | bc -l)
+echo "the simple interest is $interest"
 
